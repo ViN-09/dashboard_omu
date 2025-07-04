@@ -324,8 +324,9 @@ aside:not(:has(:checked))
 
 #main-title{
     font-size: 50px;
+    margin-bottom: 15px;
     /* background-color: aqua; */
-    text-align: center;
+    
 }
 
 .content-container{
@@ -387,6 +388,21 @@ body {
     /* background-color: aqua; */
     text-align: center;
 }
+
+nav {
+    background: var(--bg--primary);
+    display: flex;
+    flex-flow: column;
+    min-width: var(--collapsed);
+    border-radius: var(--brad-outer);
+    flex: 0 0 auto;
+    transition: flex-basis 300ms ease-out;
+    will-change: flex-basis;
+    padding: var(--frame-space);
+    box-shadow: 0 3px 5px #1233, 0 5px 17px #0003;
+    height: 98.5vh;
+}
+
 
 }
 

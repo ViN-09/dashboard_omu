@@ -10,27 +10,30 @@
 
     <link rel="stylesheet" href="forntend/Dashborad.css">
     <link rel="stylesheet" href="forntend/Dashboard-Content.css">
+    <link rel="stylesheet" href="forntend/Profile-Content.css">
     <title>Document</title>
 </head>
 
 <body>
-    <aside class="vertical-sidebar"> <input type="checkbox" role="switch" id="checkbox-input" class="checkbox-input"
-            checked />
+    <aside class="vertical-sidebar"> <input type="checkbox" role="switch" id="checkbox-input" class="checkbox-input" />
         <nav>
             <header>
-                <div class="sidebar__toggle-container"> <label tabindex="0" for="checkbox-input"
-                        id="label-for-checkbox-input" class="nav__toggle"> <span class="toggle--icons"
-                            aria-hidden="true"> <svg width="24" height="24" viewBox="0 0 24 24"
-                                class="toggle-svg-icon toggle--open">
+                <div class="sidebar__toggle-container">
+                    <label tabindex="0" for="checkbox-input" id="label-for-checkbox-input" class="nav__toggle">
+                        <span class="toggle--icons" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="toggle-svg-icon toggle--close">
                                 <path
                                     d="M3 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2zM2 12a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1M2 18a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1">
                                 </path>
-                            </svg> <svg width="24" height="24" viewBox="0 0 24 24"
-                                class="toggle-svg-icon toggle--close">
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="toggle-svg-icon toggle--open">
                                 <path
                                     d="M18.707 6.707a1 1 0 0 0-1.414-1.414L12 10.586 6.707 5.293a1 1 0 0 0-1.414 1.414L10.586 12l-5.293 5.293a1 1 0 1 0 1.414 1.414L12 13.414l5.293 5.293a1 1 0 0 0 1.414-1.414L13.414 12z">
                                 </path>
-                            </svg> </span> </label> </div>
+                            </svg>
+                        </span>
+                    </label>
+                </div>
                 <figure> <img class="codepen-logo" src="img/telkomsellogo-freelogovectors.net_.png" alt="" />
                     <figcaption>
                         <p class="user-id">DASHBOARD</p>
@@ -38,39 +41,39 @@
                     </figcaption>
                 </figure>
             </header>
-            <section class="sidebar__wrapper">
+            <section class="sidebar__wrapper" id="sidebar">
                 <ul class="sidebar__list list--primary">
                     <li class="sidebar__item item--heading">
                         <h2 class="sidebar__item--heading">general</h2>
                     </li>
                     <li class="sidebar__item">
-                        <a class="sidebar__link" href="#" data-tooltip="Inbox">
+                        <a class="sidebar__link" href="#" data-tooltip="Dashboard" id="Dashboard">
                             <span class="icon"><i class="bi bi-inbox"></i></span>
-                            <span class="text">Inbox</span>
+                            <span class="text">Dashboard</span>
                         </a>
                     </li>
                     <li class="sidebar__item">
-                        <a class="sidebar__link" href="#" data-tooltip="Favourite">
-                            <span class="icon"><i class="bi bi-star"></i></span>
-                            <span class="text">Favourite</span>
+                        <a class="sidebar__link" href="#" data-tooltip="Activity List">
+                            <span class="icon"><i class="bi bi-list-check"></i></span>
+                            <span class="text">Activity List</span>
                         </a>
                     </li>
                     <li class="sidebar__item">
-                        <a class="sidebar__link" href="#" data-tooltip="Sent">
-                            <span class="icon"><i class="bi bi-send"></i></span>
-                            <span class="text">Sent</span>
+                        <a class="sidebar__link" href="#" data-tooltip="Checklist">
+                            <span class="icon"><i class="bi bi-check-square-fill"></i></span>
+                            <span class="text">Checklist</span>
                         </a>
                     </li>
                     <li class="sidebar__item">
-                        <a class="sidebar__link" href="#" data-tooltip="Draft">
-                            <span class="icon"><i class="bi bi-envelope-exclamation"></i></span>
-                            <span class="text">Draft</span>
+                        <a class="sidebar__link" href="#" data-tooltip="Executive Summary">
+                            <span class="icon"><i class="bi bi-graph-up"></i></span>
+                            <span class="text">Executive Summary</span>
                         </a>
                     </li>
                     <li class="sidebar__item">
-                        <a class="sidebar__link" href="#" data-tooltip="Archive">
-                            <span class="icon"><i class="bi bi-archive"></i></span>
-                            <span class="text">Archive</span>
+                        <a class="sidebar__link" href="#" data-tooltip="Data Potensi">
+                            <span class="icon"><i class="bi bi-database-fill"></i></span>
+                            <span class="text">Data Potensi</span>
                         </a>
                     </li>
                     <li class="sidebar__item">
@@ -108,31 +111,23 @@
         </nav>
     </aside>
 
-    <div class="main-container">
-        <h1 id="main-title">DASHBORAD</h1>
-        <div class="content-container" id="content-container">
-            <div class="dashboard-content">
-                <div class="dashboard-box">
-                    <div class="dashboard-box-content">
-                        <h2>Title</h2>
+    <div class="main-container" id="main-container"> 
+        <h1 id="main-title">PROFILE</h1>
+        <div class="content-container fade-in" id="content-container">
+            <div class="profile-content">
+                <div class="profile-picture">
+                    <div class="picture">
+                        <img src="img/blank-profile-picture-973460_1280.png" alt="Profile">
+                        <a id="edit-profil-picture"><i class="bi bi-pencil-fill"></i></a>
                     </div>
                 </div>
-                <div class="dashboard-box">
-                    <div class="dashboard-box-content">
-                        <h2>Title</h2>
-                    </div>
+                <div class="profile-data">
+                    <h1 id="profile-nama">Vinci Bla bla Bla</h1>
+                    <h2>Vinci Bla bla Bla</h2>
+                    <h2>Vinci Bla bla Bla</h2>
+                    <h2>Vinci Bla bla Bla</h2>
+                    <h2>Vinci Bla bla Bla</h2>
                 </div>
-                <div class="dashboard-box">
-                    <div class="dashboard-box-content">
-                        <h2>Title</h2>
-                    </div>
-                </div>
-                <div class="dashboard-box">
-                    <div class="dashboard-box-content">
-                        <h2>Title</h2>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -146,6 +141,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
         integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
         crossorigin="anonymous"></script>
+
+    <script src="backend/menu-generator.js"></script>
+
+
+    <script>
+        document.querySelectorAll('.sidebar__link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // biar nggak reload halaman
+                let selected_menu=this.id;
+                console.log(this.id);
+                switch (selected_menu) {
+                    case 'Dashboard':
+                        document.addEventListener('DOMContentLoaded', generate_dashboard());
+                        break;
+                
+                    default:
+                        break;
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

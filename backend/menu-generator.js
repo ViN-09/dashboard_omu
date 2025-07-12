@@ -68,3 +68,123 @@ function generate_profile(){
         </div>
         `;
 }
+
+function generate_menuceklist(){
+         const mainContainer = document.getElementById('main-container');
+        mainContainer.innerHTML = `
+          <h1 id="main-title">LIST CEKLIST</h1>
+          <div class="content-container fade-in" id="content-container">
+            <div class="ceklist-content">
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Daily</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                  <h3>Disisni Keterangan judul di tuliskan</h3>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                  <h3>Disisni Keterangan judul di tuliskan</h3>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                  <h3>Disisni Keterangan judul di tuliskan</h3>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+              <div class="ceklist-box">
+                <div class="ceklist-box-content">
+                  <h1>Activity Weekly</h1>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        `;
+}

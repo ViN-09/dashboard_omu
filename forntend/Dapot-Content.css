@@ -1,3 +1,147 @@
-.table-container{
-    background-color: aqua;
+:root {
+  --primary-bg: whitesmoke;
+  --accent: #f35525;
+  --text-dark: #2c2c2c;
+  --text-light: #fff;
+  --border-color: #dcdcdc;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --badge-active: #4caf50;
+  --badge-inactive: #e53935;
+}
+
+.main-container-dapot{
+    background-color: rgb(9, 41, 41);
+    width: 400%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.table-section {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px var(--shadow-color);
+  animation: fadeInUp 0.6s ease-out;
+  max-height: 87dvh ;
+  overflow-y: auto;
+  overflow-x: auto;
+
+}
+
+.table-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+}
+
+/* .table-container {
+  overflow-x: auto;
+} */
+
+.futuristic-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+  background-color: #fff;
+}
+
+.futuristic-table thead {
+  background-color: var(--accent);
+  color: var(--text-light);
+}
+
+.futuristic-table th,
+.futuristic-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.futuristic-table tbody tr {
+  transition: background 0.3s ease;
+}
+
+.futuristic-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.badge {
+  padding: 0.4em 0.8em;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.badge.active {
+  background-color: var(--badge-active);
+}
+
+.badge.inactive {
+  background-color: var(--badge-inactive);
+}
+
+.btn-view {
+  padding: 0.4em 1em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+  background-color: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-view:hover {
+  background-color: #d34414;
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .table-section {
+    padding: 1rem;
+  }
+
+  .table-section {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px var(--shadow-color);
+  animation: fadeInUp 0.6s ease-out;
+  max-height: 87dvh ;
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+  }
+
+  .table-title {
+    font-size: 1.4rem;
+  }
+
+  .futuristic-table th,
+  .futuristic-table td {
+    padding: 0.7rem;
+    font-size: 0.85rem;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

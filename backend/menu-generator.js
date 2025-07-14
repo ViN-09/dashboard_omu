@@ -1,6 +1,6 @@
-function generate_dashboard(){
-        const mainContainer = document.getElementById('main-container');
-        mainContainer.innerHTML = `
+function generate_dashboard() {
+  const mainContainer = document.getElementById('main-container');
+  mainContainer.innerHTML = `
           <h1 id="main-title">DASHBOARD</h1>
           <div class="content-container fade-in" id="content-container">
             <div class="dashboard-content">
@@ -39,9 +39,9 @@ function generate_dashboard(){
         `;
 }
 
-function generate_profile(){
-        const mainContainer = document.getElementById('main-container');
-        mainContainer.innerHTML = `
+function generate_profile() {
+  const mainContainer = document.getElementById('main-container');
+  mainContainer.innerHTML = `
           <h1 id="main-title">PROFILE</h1>
         <div class="content-container fade-in" id="content-container">
             <div class="profile-content">
@@ -69,9 +69,9 @@ function generate_profile(){
         `;
 }
 
-function generate_menuceklist(){
-         const mainContainer = document.getElementById('main-container');
-        mainContainer.innerHTML = `
+function generate_menuceklist() {
+  const mainContainer = document.getElementById('main-container');
+  mainContainer.innerHTML = `
           <h1 id="main-title">LIST CEKLIST</h1>
           <div class="content-container fade-in" id="content-container">
             <div class="ceklist-content">
@@ -188,3 +188,209 @@ function generate_menuceklist(){
           </div>
         `;
 }
+
+function generate_dapot() {
+  const mainContainer = document.getElementById('main-container');
+  mainContainer.innerHTML = `
+          <h1 id="main-title">DATA POTENSI</h1>
+        <div class="sub-menu-dapot">
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+                        <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+                        <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+            <div class="sub-menu-dapot-list">PAC</div>
+        </div>
+        <section class="table-wrapper">
+            <div class="table-container">
+                <table class="futuristic-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Joined</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Amanda Grey</td>
+                            <td>Marketing</td>
+                            <td>Manager</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2021-02-14</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>John Doe</td>
+                            <td>Development</td>
+                            <td>Senior Dev</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>2022-11-03</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Sarah King</td>
+                            <td>Design</td>
+                            <td>UX Designer</td>
+                            <td><span class="status inactive">Inactive</span></td>
+                            <td>2020-07-28</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Michael Chen</td>
+                            <td>QA</td>
+                            <td>Analyst</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2023-01-20</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Lisa Wong</td>
+                            <td>HR</td>
+                            <td>Recruiter</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2021-09-15</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Thomas Shelby</td>
+                            <td>Security</td>
+                            <td>Lead</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>2023-06-10</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Nina Hart</td>
+                            <td>Finance</td>
+                            <td>Accountant</td>
+                            <td><span class="status inactive">Inactive</span></td>
+                            <td>2020-03-01</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Daniel Vega</td>
+                            <td>Support</td>
+                            <td>Agent</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2019-12-22</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Daniel Vega</td>
+                            <td>Support</td>
+                            <td>Agent</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2019-12-22</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Daniel Vega</td>
+                            <td>Support</td>
+                            <td>Agent</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2019-12-22</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Daniel Vega</td>
+                            <td>Support</td>
+                            <td>Agent</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2019-12-22</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Daniel Vega</td>
+                            <td>Support</td>
+                            <td>Agent</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2019-12-22</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Daniel Vega</td>
+                            <td>Support</td>
+                            <td>Agent</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2019-12-22</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Daniel Vega</td>
+                            <td>Support</td>
+                            <td>Agent</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2019-12-22</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Daniel Vega</td>
+                            <td>Support</td>
+                            <td>Agent</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2019-12-22</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Daniel Vega</td>
+                            <td>Support</td>
+                            <td>Agent</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2019-12-22</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Daniel Vega</td>
+                            <td>Support</td>
+                            <td>Agent</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2019-12-22</td>
+                            <td><button class="action-btn">Details</button></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        `;
+}
+
+
+
+

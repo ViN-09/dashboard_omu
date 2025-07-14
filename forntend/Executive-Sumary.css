@@ -1,0 +1,104 @@
+.exsum-content{
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr);
+    /* flex-direction: column; */
+  gap: 16px;
+  height: max-content;
+  max-width: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  border-radius: 12px;
+
+}
+.exsum-content-box {
+        padding: 15px;
+        height: max-content;
+    background-color: var(--bg--primary);
+     border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+box-shadow: 0 3px 5px #1233, 0 5px 17px #0003;
+}
+
+
+.exsum-content-box-item{
+    padding: 20px;
+    position: relative;
+    border: solid 1px var(--gray--primary);
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    height: max-content;
+}
+
+.box-title-exum {
+    position: absolute;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg--primary);
+    padding: 0 1rem;
+    font-size: 1rem;
+    color: var(--gray--secondary);
+}
+
+.exsum-content-box-warper{
+    height: 98%;
+}
+
+#exsum-cme-warper{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    
+}
+
+.box-title-exsum-content{
+    margin-bottom: 20px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.table-container-exsum {
+  overflow-x: auto;
+}
+
+/* Tabel gaya futuristik */
+.table-exsum {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg--focus);
+  border-radius: var(--brad-inner);
+  overflow: hidden;
+  font-size: 0.95rem;
+  color: var(--gray--secondary);
+}
+
+.table-exsum th,
+.table-exsum td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gray--primary);
+}
+
+.table-exsum th {
+  background-color: var(--bg--hover);
+  color: var(--gray--primary);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.table-exsum tbody tr:hover {
+  background-color: var(--bg--active);
+  transition: background-color 0.3s ease;
+}
+
+
+
+#bar-chart-exsum-load-pln {
+  width: 100%;
+  height: 300px;
+}

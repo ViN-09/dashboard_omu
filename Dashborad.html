@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="forntend/Dashborad.css">
     <link rel="stylesheet" href="forntend/Dashboard-Content.css">
     <link rel="stylesheet" href="forntend/Profile-Content.css">
     <link rel="stylesheet" href="forntend/Ceklist-Menu.css">
-    <!-- <link rel="stylesheet" href="forntend/Dapot-Content.css"> -->
+    <link rel="stylesheet" href="forntend/Dapot-Content.css">
+    <link rel="stylesheet" href="forntend/Executive-Sumary.css">
     <title>Document</title>
 </head>
 
@@ -66,7 +69,7 @@
                         </a>
                     </li>
                     <li class="sidebar__item">
-                        <a class="sidebar__link" href="#" data-tooltip="Executive Summary">
+                        <a class="sidebar__link" href="#" data-tooltip="Executive Summary" id="Executive-Summary">
                             <span class="icon"><i class="bi bi-graph-up"></i></span>
                             <span class="text">Executive Summary</span>
                         </a>
@@ -113,10 +116,10 @@
     </aside>
 
     <div class="main-container" id="main-container">
-    </div>
+
     </div>
 
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
@@ -129,12 +132,13 @@
         crossorigin="anonymous"></script>
 
     <script src="backend/menu-generator.js"></script>
+    <script src="backend/executive-generator.js"></script>
 
 
     <script>
-         window.onload = function() {
-    document.addEventListener('DOMContentLoaded', generate_menuceklist());
-  };
+        //          window.onload = function() {
+        //     document.addEventListener('DOMContentLoaded', generate_menuceklist());
+        //   };
         document.querySelectorAll('.sidebar__link').forEach(link => {
             link.addEventListener('click', function (e) {
                 e.preventDefault(); // biar nggak reload halaman
@@ -149,6 +153,13 @@
                         break;
                     case 'Ceklist':
                         document.addEventListener('DOMContentLoaded', generate_menuceklist());
+                        break;
+                    case 'Data-Potensi':
+                        document.addEventListener('DOMContentLoaded', generate_dapot());
+                        break;
+                    case 'Executive-Summary':
+                        document.addEventListener('DOMContentLoaded', generate_executive_sumary());
+                        setTimeout(call_push_chart_exm(), 1000);
                         break;
 
                     default:

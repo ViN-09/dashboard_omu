@@ -15,6 +15,7 @@
 .dashboard-content{
  display: grid;
  grid-template-columns: repeat(3,1fr);
+ width: 100%;
  grid-auto-rows: max-content;
  gap: 10px;
  overflow: auto;
@@ -233,9 +234,21 @@ box-shadow: 8px 5px 24px -13px rgba(0,0,0,0.75);
 
 @media (max-width: 450px) {
     .dashboard-content{
- grid-template-columns: repeat(1,1fr);
+      display: grid !important;
+      grid-template-columns: repeat(1,1fr);
+      width: 100%;
+      overflow-x: hidden;
+}
+.dashboard-box{
+  width: 55%;
 
+}
 
+.dashboard-staf-onsite-box-profile{
+  max-width: max-content;
+}
+#dashboard-staf-onsite-box-content{
+ grid-template-columns: repeat(1, 1fr);
 }
 #dashboard-staf-onsite{
     grid-column: span 1;
@@ -246,5 +259,24 @@ box-shadow: 8px 5px 24px -13px rgba(0,0,0,0.75);
 .dashboard-box-content h2{
     font-size: 13px !important;
     text-align: center;
+}
+
+#dashboard-box-content-status a{
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.dashboard-box a{
+  font-size: 30px;
+  margin: 10px;
+}
+
+.dashboard-staf-onsite-box-profile-desc a{
+  font-size: 11px;
+}
+.table-container-dashboard-vendor-activity{
+  th,td{
+  font-size: 10PX;
+  }
 }
 }

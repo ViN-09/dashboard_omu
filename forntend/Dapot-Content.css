@@ -140,4 +140,9 @@
 .table-wrapper {
   height: 90.5dvh;
   }
+  .futuristic-table{
+    th,td{
+      font-size: 10px;
+    }
+  }
 }

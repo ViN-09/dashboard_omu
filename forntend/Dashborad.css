@@ -33,6 +33,7 @@ input[type="checkbox"] {
 body {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start !important;
     padding: 10px;
     box-sizing: border-box;
     /* place-content: center; */
@@ -40,6 +41,7 @@ body {
     min-block-size: 100vh;
     font-family: "Poppins", sans-serif;
     background: linear-gradient(32deg, hsl(193 6 76), hsl(196 9 69) 50%);
+
 }
 
 :root {
@@ -67,7 +69,8 @@ body {
 
 .vertical-sidebar {
     display: flex;
-    inline-size: var(--expanded);
+   /* inline-size: var(--expanded); */
+      flex-shrink: 0;
     /* margin-block: 5vmin; */
     
 }
@@ -313,16 +316,78 @@ aside:not(:has(:checked))
     scale: 1;
 }
 
+.display_popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Overlay gelap */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #f35525;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0;
+  user-select: none;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.popup_close:hover {
+  color: #ffffff; /* warna aksen saat hover */
+  background-color:#f35525 ;
+  
+}
+
+.popup_content{
+    display: flex;
+    flex-direction: column;
+    padding: 7px;
+    h1{
+        font-weight: bold;
+        margin-bottom: 7px;
+    }
+}
+
+.display_popup_box {
+  position: relative;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+   display: flex;       /* Jadikan flex container */
+  flex-wrap: wrap;     /* Biarkan isi wrap ke baris baru jika melebihi lebar */
+  max-width: 50%;
+}
+
+
 
 /* Style Main */
 .main-container{
-    width: 400%;
+    max-width: 97.5%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 10px;
     padding-bottom: 0px;
     max-height: 97vh;
 }
+
+
 
 #main-title{
     font-size: 50px;
@@ -341,6 +406,8 @@ aside:not(:has(:checked))
 .hidden {
   display: none;
 }
+
+
 
 @media (max-width: 450px) {
     .vertical-sidebar {
@@ -383,6 +450,7 @@ body {
     flex-direction: row;
     padding: 0px;
     box-sizing: border-box;
+    justify-content: left;
     /* place-content: center; */
     margin: 0;
     min-block-size: 100vh;
@@ -393,8 +461,7 @@ body {
 .main-container{
     margin-left:0px;
     max-width: 80%;
-    overflow: hidden;
-    
+    overflow: hidden; 
 }
 #main-title{
     font-size: 20px;
@@ -414,6 +481,10 @@ nav {
     /* padding: var(--frame-space); */
     box-shadow: 0 3px 5px #1233, 0 5px 17px #0003;
     height: 95vh;
+}
+
+.display_popup_box {
+    max-width: 90%;
 }
 
 

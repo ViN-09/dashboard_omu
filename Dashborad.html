@@ -119,7 +119,16 @@
     </aside>
 
     <div class="main-container" id="main-container">
-        
+
+    </div>
+
+    <div class="display_popup hidden" id="display_popup">
+        <div class="display_popup_box">
+            <button class="popup_close" id="popup_close" onclick="closePopup()">&times;</button>
+            <div class="popup_content" id="popup_content">
+                <!-- Konten di sini -->
+            </div>
+        </div>
     </div>
 
 
@@ -138,9 +147,9 @@
 
 
     <script>
-        //          window.onload = function() {
-        //     document.addEventListener('DOMContentLoaded', generate_menuceklist());
-        //   };
+        window.onload = function () {
+            document.addEventListener('DOMContentLoaded', generate_dapot());
+        };
         document.querySelectorAll('.sidebar__link').forEach(link => {
             link.addEventListener('click', function (e) {
                 e.preventDefault(); // biar nggak reload halaman
@@ -164,14 +173,20 @@
                         setTimeout(call_push_chart_exm(), 1000);
                         break;
                     case 'List-Activity':
-                        document.addEventListener('DOMContentLoaded',generate_list_actifity());
+                        document.addEventListener('DOMContentLoaded', generate_list_actifity());
                         setTimeout(call_push_chart_exm(), 1000);
-                        break;    
+                        break;
                     default:
                         break;
                 }
             });
         });
+
+        function closePopup() {
+  document.getElementById('display_popup').classList.add('hidden');
+  console.log('Popup ditutup!');
+}
+
     </script>
 </body>
 

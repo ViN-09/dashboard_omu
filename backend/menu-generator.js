@@ -1,6 +1,6 @@
 function generate_dashboard() {
-  const mainContainer = document.getElementById('main-container');
-  mainContainer.innerHTML = `
+    const mainContainer = document.getElementById('main-container');
+    mainContainer.innerHTML = `
           <h1 id="main-title">DASHBOARD</h1>
         <div class="content-container fade-in" id="content-container-dashboard">
             <div class="dashboard-content">
@@ -187,8 +187,8 @@ function generate_dashboard() {
 }
 
 function generate_profile() {
-  const mainContainer = document.getElementById('main-container');
-  mainContainer.innerHTML = `
+    const mainContainer = document.getElementById('main-container');
+    mainContainer.innerHTML = `
           <h1 id="main-title">PROFILE</h1>
         <div class="content-container fade-in" id="content-container">
             <div class="profile-content">
@@ -217,8 +217,8 @@ function generate_profile() {
 }
 
 function generate_menuceklist() {
-  const mainContainer = document.getElementById('main-container');
-  mainContainer.innerHTML = `
+    const mainContainer = document.getElementById('main-container');
+    mainContainer.innerHTML = `
           <h1 id="main-title">LIST CEKLIST</h1>
           <div class="content-container fade-in" id="content-container">
             <div class="ceklist-content">
@@ -337,36 +337,15 @@ function generate_menuceklist() {
 }
 
 function generate_dapot() {
-  const mainContainer = document.getElementById('main-container');
-  mainContainer.innerHTML = `
+    const mainContainer = document.getElementById('main-container');
+    mainContainer.innerHTML = `
           <h1 id="main-title">DATA POTENSI</h1>
-        <div class="sub-menu-dapot">
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-                        <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-                        <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-            <div class="sub-menu-dapot-list">PAC</div>
-        </div>
+        <div class="sub-menu-dapot" id="sub-menu-dapot"></div>
         <section class="table-wrapper">
             <div class="table-container">
                 <table class="futuristic-table">
                     <thead>
-                        <tr>
+                        <tr id='table-head'>
                             <th>#</th>
                             <th>Name</th>
                             <th>Department</th>
@@ -376,7 +355,7 @@ function generate_dapot() {
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id='table-data'>
                         <tr>
                             <td>1</td>
                             <td>Amanda Grey</td>
@@ -395,154 +374,21 @@ function generate_dapot() {
                             <td>2022-11-03</td>
                             <td><button class="action-btn">Details</button></td>
                         </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Sarah King</td>
-                            <td>Design</td>
-                            <td>UX Designer</td>
-                            <td><span class="status inactive">Inactive</span></td>
-                            <td>2020-07-28</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Michael Chen</td>
-                            <td>QA</td>
-                            <td>Analyst</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2023-01-20</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Lisa Wong</td>
-                            <td>HR</td>
-                            <td>Recruiter</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2021-09-15</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Thomas Shelby</td>
-                            <td>Security</td>
-                            <td>Lead</td>
-                            <td><span class="status pending">Pending</span></td>
-                            <td>2023-06-10</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Nina Hart</td>
-                            <td>Finance</td>
-                            <td>Accountant</td>
-                            <td><span class="status inactive">Inactive</span></td>
-                            <td>2020-03-01</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Daniel Vega</td>
-                            <td>Support</td>
-                            <td>Agent</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2019-12-22</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Daniel Vega</td>
-                            <td>Support</td>
-                            <td>Agent</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2019-12-22</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Daniel Vega</td>
-                            <td>Support</td>
-                            <td>Agent</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2019-12-22</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Daniel Vega</td>
-                            <td>Support</td>
-                            <td>Agent</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2019-12-22</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Daniel Vega</td>
-                            <td>Support</td>
-                            <td>Agent</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2019-12-22</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Daniel Vega</td>
-                            <td>Support</td>
-                            <td>Agent</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2019-12-22</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Daniel Vega</td>
-                            <td>Support</td>
-                            <td>Agent</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2019-12-22</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Daniel Vega</td>
-                            <td>Support</td>
-                            <td>Agent</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2019-12-22</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Daniel Vega</td>
-                            <td>Support</td>
-                            <td>Agent</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2019-12-22</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Daniel Vega</td>
-                            <td>Support</td>
-                            <td>Agent</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>2019-12-22</td>
-                            <td><button class="action-btn">Details</button></td>
-                        </tr>
-
                     </tbody>
                 </table>
             </div>
         </section>
         `;
+
+
+    generate_dapot_list();
 }
 
 
-function generate_list_actifity(){
+function generate_list_actifity() {
 
- const mainContainer = document.getElementById('main-container');
-  mainContainer.innerHTML = `
+    const mainContainer = document.getElementById('main-container');
+    mainContainer.innerHTML = `
   <h1 id="main-title">LIST ACTIVITY</h1>
         <div class="actvity-dashboard-list">
             <div class="actvity-box">
@@ -653,6 +499,143 @@ function generate_list_actifity(){
             </div>
         </div>
         `
+}
+
+
+function generate_dapot_list() {
+    var nama_table_request;
+    fetch('backend/api.php?request=dapot_list')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById("sub-menu-dapot");
+            data.forEach(item => {
+                const div = document.createElement("div");
+                div.className = "sub-menu-dapot-list";
+                div.id = item.TABLE_NAME;
+                div.textContent = item.TABLE_NAME.replace("dp_", "").toUpperCase();
+
+                div.addEventListener('click', () => {
+                    console.log('ID yang diklik:', div.id);
+                    table_name = div.id;
+                    document.querySelectorAll('.sub-menu-dapot-list').forEach(el => {
+                        el.classList.remove('submenu_selected');
+                    });
+                    document.getElementById(table_name).classList.add("submenu_selected");
+                    create_table_head(table_name);
+                    create_table_body(table_name);
+                });
+                container.appendChild(div);
+            });
+        })
+        .catch(error => {
+            console.error('Terjadi kesalahan:', error);
+        });
+}
+
+function create_table_head(table_name) {
+    fetch('backend/api.php?request=table_kolom&name=' + table_name)
+        .then(res => res.json())
+        .then(data => {
+            const trHead = document.getElementById('table-head');
+            trHead.innerHTML = ''; // Kosongkan dulu isi tr
+
+            data.forEach(col => {
+
+                const th = document.createElement('th');
+                if (col.Field != 'id') {
+                    // Ganti semua underscore dengan spasi
+                    th.textContent = col.Field.replace(/_/g, ' ');
+                }
+                else {
+                    th.textContent = 'No';
+                }
+
+                trHead.appendChild(th);
+
+            }
+            );
+            const th = document.createElement('th');
+            th.textContent = 'Action';
+            trHead.appendChild(th);
+        })
+        .catch(err => console.error(err));
+}
+
+function create_table_body(table_name) {
+    fetch('backend/api.php?request=table_data&name=' + table_name) // ganti dengan URL API kamu
+        .then(res => res.json())
+        .then(data => {
+            const hasListNe = data.some(obj => 'list_ne' in obj);
+            const tbody = document.getElementById('table-data');
+            tbody.innerHTML = ''; // Kosongkan tbody
+
+            if (data.length === 0) return;
+
+            data.forEach((row, index) => {
+                const tr = document.createElement('tr');
+
+                // Set id dari tr sesuai dengan nilai row.id
+                tr.id = row.id;
+
+                // Kolom nomor
+                const tdNo = document.createElement('td');
+                tdNo.textContent = index + 1;
+                tr.appendChild(tdNo);
+
+                // Kolom data kecuali id
+                Object.entries(row).forEach(([key, value]) => {
+                    if (key != 'id' && key != 'list_ne') {
+                        const td = document.createElement('td');
+                        td.textContent = `${value}`;
+                        tr.appendChild(td);
+                    }
+
+                    if (key == 'list_ne') {
+                        const td = document.createElement('td');
+                        //kode ini lik di baris manapun keluar td.innerHTML = `<i class="fa-solid fa-eye" id="${row.id}"></i>`;
+                        td.innerHTML = `<i class="fa-solid fa-eye" id="icon-${row.id}"></i>`;
+                        tr.appendChild(td);
+                    }
+
+                });
+
+                tbody.appendChild(tr);
+                const icon = document.getElementById(`icon-${row.id}`);
+                if (hasListNe) {
+                    console.log('Ada key list_ne di setidaknya satu objek.');
+                    icon.addEventListener('click', () => {
+                        console.log('ID icon yang diklik:', icon.id);
+                        id_ne_to_show = icon.id;
+                        const cleanId = id_ne_to_show.replace('icon-', '');
+                        generate_list_ne_dapot(cleanId, table_name);
+                    });
+                }
+
+
+                // Pasang event listener klik:
+            });
+        })
+        .catch(err => console.error('Gagal mengambil data:', err));
+
+
+}
+
+function generate_list_ne_dapot(id, table_name) {
+    fetch('backend/api.php?request=data_from_id&name=' + table_name + '&id=' + id) // ganti dengan URL API kamu
+        .then(res => res.json())
+        .then(data => {
+            // data adalah objek langsung
+            const value = data.list_ne;
+            const title = data.ne_id;
+            console.log(value);
+            document.getElementById('popup_content').innerHTML = '';
+            document.getElementById('popup_content').innerHTML += '<h1>UPS ' + title + '</h1>';
+
+            // Misal tampilkan di popup_content
+            document.getElementById('popup_content').innerHTML += '<p>' + value + '</p>';
+        })
+        .catch(err => console.error(err));
+    document.getElementById('display_popup').classList.remove('hidden');
 }
 
 

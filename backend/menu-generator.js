@@ -381,6 +381,11 @@ function generate_dapot() {
         `;
 
 
+    create_table_head('dp_accescontrol');
+    create_table_body('dp_accescontrol');
+
+
+
     generate_dapot_list();
 }
 
@@ -557,6 +562,9 @@ function create_table_head(table_name) {
             const th = document.createElement('th');
             th.textContent = 'Action';
             trHead.appendChild(th);
+            let formatted = table_name.replace(/^dp_/, '').toUpperCase();
+            document.getElementById("main-title").textContent = 'DATA POTENSI ' + formatted;
+
         })
         .catch(err => console.error(err));
 }
@@ -598,6 +606,9 @@ function create_table_body(table_name) {
                     }
 
                 });
+                const td = document.createElement('td');
+                td.innerHTML = `<i class="fas fa-edit" id="edit-${row.id}"></i> | <i class="fa-solid fa-trash" id="delete-${row.id}"></i>`;
+                tr.appendChild(td);
 
                 tbody.appendChild(tr);
                 const icon = document.getElementById(`icon-${row.id}`);
@@ -612,7 +623,13 @@ function create_table_body(table_name) {
                 }
 
 
-                // Pasang event listener klik:
+                document.getElementById(`edit-${row.id}`).addEventListener('click', () => {
+                    console.log('Edit ID:', row.id);
+                });
+
+                document.getElementById(`delete-${row.id}`).addEventListener('click', () => {
+                    console.log('Delete ID:', row.id);
+                });
             });
         })
         .catch(err => console.error('Gagal mengambil data:', err));

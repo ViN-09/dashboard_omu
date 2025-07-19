@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['request'])) {
     // Daftar fungsi yang diperbolehkan
-    $available_function = ['dapot_list', 'table_kolom' , 'table_data' , 'data_from_id'];
+    $available_function = ['dapot_list', 'table_kolom' , 'table_data' , 'data_from_id' , 'single_data_from_id'];
     // Ambil request dari GET atau POST
     $requested_function = $_GET['request'] ?? $_POST['request'] ?? null;
 
@@ -20,6 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['request'])) {
                 break;
             case 'data_from_id':
                 echo json_encode(generate_data_by_id(db_conn(), $_GET['name'],$_GET['id']));
+                break;
+            case 'single_data_from_id':
+                echo json_encode(generate_data_by_per_kolom(db_conn(), $_GET['name'],$_GET['id'],$_GET['kolom']));
                 break;
         }
         isset($_GET);
@@ -106,6 +109,19 @@ function generate_data_by_id($pdo, $table, $id)
 {
     $data = [];
     $stmt = $pdo->query("SELECT * FROM `$table` WHERE id='$id'");
+
+    while ($row = $stmt->fetch()) {
+        $data = $row;
+    }
+
+    return $data;
+}
+
+function generate_data_by_per_kolom($pdo, $table, $id , $kolom)
+{
+    $data = [];
+    $stmt = $pdo->query("SELECT `$kolom` FROM `$table` WHERE id = $id");
+
 
     while ($row = $stmt->fetch()) {
         $data = $row;

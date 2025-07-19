@@ -164,6 +164,76 @@
   max-width: 90%;
 }
 
+form#myForm {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 8px;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+}
+
+form#myForm label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+form#myForm input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+form#myForm input[type="text"]:focus {
+  border-color: #f35525;
+  outline: none;
+}
+
+form#myForm button[type="submit"] {
+  grid-column: span 2;
+  background-color: #f35525;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+form#myForm button[type="submit"]:hover {
+  background-color: #d4441e;
+}
+
+form#myForm .form-group {
+  margin-bottom: 15px;
+}
+
+form#myForm .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form#myForm .form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+
 
 @media (max-width: 450px) {
 .table-wrapper {

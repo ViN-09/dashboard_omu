@@ -592,15 +592,18 @@ function create_table_body(table_name) {
 
                 // Kolom data kecuali id
                 Object.entries(row).forEach(([key, value]) => {
+
                     if (key != 'id' && key != 'list_ne') {
                         const td = document.createElement('td');
                         td.textContent = `${value}`;
+                        td.id = key;
                         tr.appendChild(td);
                     }
 
                     if (key == 'list_ne') {
                         const td = document.createElement('td');
-                        //kode ini lik di baris manapun keluar td.innerHTML = `<i class="fa-solid fa-eye" id="${row.id}"></i>`;
+                        // kode ini lik di baris manapun keluar td.innerHTML = `<i class="fa-solid fa-eye" id="${row.id}"></i>`;
+                        td.id = key;
                         td.innerHTML = `<i class="fa-solid fa-eye" id="icon-${row.id}"></i>`;
                         tr.appendChild(td);
                     }
@@ -621,10 +624,11 @@ function create_table_body(table_name) {
                         generate_list_ne_dapot(cleanId, table_name);
                     });
                 }
-
-
                 document.getElementById(`edit-${row.id}`).addEventListener('click', () => {
                     console.log('Edit ID:', row.id);
+                    build_form();
+                    fillFormWithRowData(row.id)
+                    document.getElementById('display_popup').classList.remove('hidden');
                 });
 
                 document.getElementById(`delete-${row.id}`).addEventListener('click', () => {
@@ -654,6 +658,76 @@ function generate_list_ne_dapot(id, table_name) {
         .catch(err => console.error(err));
     document.getElementById('display_popup').classList.remove('hidden');
 }
+
+function build_form() {
+    document.getElementById("popup_content").innerHTML = `
+  <form id="myForm" method="POST" action="proses.php">
+   </form>
+`;
+}
+
+function getRowDataById(rowId) {
+  const tr = document.getElementById(rowId);
+  if (!tr) return null;
+
+  const data = {};
+  const tds = tr.querySelectorAll("td[id]"); // hanya td yang punya id
+
+  tds.forEach(td => {
+    const key = td.id;
+    const value = td.textContent.trim();
+    data[key] = value;
+  });
+
+  return data;
+}
+
+function fillFormWithRowData(rowId) {
+  const dataFinal = getRowDataById(rowId);
+  if (!dataFinal) return;
+
+  const form = document.getElementById("myForm");
+  form.innerHTML = ''; // Kosongkan form dulu
+
+  for (const key in dataFinal) {
+    // Bungkus tiap field dalam div
+    const formGroup = document.createElement("div");
+    formGroup.classList.add("form-group");
+
+    // Label
+    const label = document.createElement("label");
+    label.setAttribute("for", key);
+    label.textContent = key.replace(/_/g, ' ') + ":";
+
+    // Input
+    const input = document.createElement("input");
+    input.type = "text";
+    input.name = key;
+    input.id = key;
+    input.value = dataFinal[key];
+
+    // Masukkan ke dalam div
+    formGroup.appendChild(label);
+    formGroup.appendChild(input);
+
+    // Tambahkan div ke form
+    form.appendChild(formGroup);
+  }
+
+  // Tombol submit
+  const submitBtn = document.createElement("button");
+  submitBtn.type = "submit";
+  submitBtn.textContent = "Kirim Data";
+  submitBtn.style.marginTop = "10px";
+
+  form.appendChild(submitBtn);
+}
+
+
+
+
+
+
 
 
 

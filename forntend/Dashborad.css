@@ -356,6 +356,8 @@ aside:not(:has(:checked))
     display: flex;
     flex-direction: column;
     padding: 7px;
+    max-height: 80vh;
+    overflow: auto;
     h1{
         font-weight: bold;
         margin-bottom: 7px;
@@ -371,7 +373,7 @@ aside:not(:has(:checked))
 
    display: flex;       /* Jadikan flex container */
   flex-wrap: wrap;     /* Biarkan isi wrap ke baris baru jika melebihi lebar */
-  max-width: 50%;
+  max-width: 80%;
 }
 
 

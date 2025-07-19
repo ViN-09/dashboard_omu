@@ -148,7 +148,7 @@
 
     <script>
         // window.onload = function () {
-        //     document.addEventListener('DOMContentLoaded', generate_dapot());
+        //     console.log(input_builder(1, 1, 1, 'dp_cctv'))
         // };
         document.querySelectorAll('.sidebar__link').forEach(link => {
             link.addEventListener('click', function (e) {
@@ -183,9 +183,11 @@
         });
 
         function closePopup() {
-  document.getElementById('display_popup').classList.add('hidden');
-  console.log('Popup ditutup!');
-}
+            document.getElementById('display_popup').classList.add('hidden');
+            console.log('Popup ditutup!');
+        }
+
+
 
     </script>
 </body>

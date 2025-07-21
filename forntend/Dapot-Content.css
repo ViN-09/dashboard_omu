@@ -200,7 +200,7 @@ form#myForm input[type="text"]:focus {
 }
 
 form#myForm button[type="submit"] {
-  grid-column: span 2;
+  grid-column: span 1;
   background-color: #f35525;
   color: white;
   padding: 10px 16px;
@@ -244,4 +244,8 @@ form#myForm .form-group input {
       font-size: 10px;
     }
   }
+  form#myForm {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+}
 }

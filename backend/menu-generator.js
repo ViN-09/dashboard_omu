@@ -383,9 +383,6 @@ function generate_dapot() {
 
     create_table_head('dp_accescontrol');
     create_table_body('dp_accescontrol');
-
-
-
     generate_dapot_list();
 }
 
@@ -528,6 +525,7 @@ function generate_dapot_list() {
                     document.getElementById(table_name).classList.add("submenu_selected");
                     create_table_head(table_name);
                     create_table_body(table_name);
+                    db_dapot_selector();
                 });
                 container.appendChild(div);
             });
@@ -661,66 +659,123 @@ function generate_list_ne_dapot(id, table_name) {
 
 function build_form() {
     document.getElementById("popup_content").innerHTML = `
-  <form id="myForm" method="POST" action="proses.php">
+  <form id="myForm" method="POST">
    </form>
 `;
 }
 
 function getRowDataById(rowId) {
-  const tr = document.getElementById(rowId);
-  if (!tr) return null;
+    const tr = document.getElementById(rowId);
+    if (!tr) return null;
 
-  const data = {};
-  const tds = tr.querySelectorAll("td[id]"); // hanya td yang punya id
+    const data = {};
+    const tds = tr.querySelectorAll("td[id]"); // hanya td yang punya id
 
-  tds.forEach(td => {
-    const key = td.id;
-    const value = td.textContent.trim();
-    data[key] = value;
-  });
+    tds.forEach(td => {
+        const key = td.id;
+        const value = td.textContent.trim();
+        data[key] = value;
+    });
 
-  return data;
+    return data;
 }
 
 function fillFormWithRowData(rowId) {
-  const dataFinal = getRowDataById(rowId);
-  if (!dataFinal) return;
+    const dataFinal = getRowDataById(rowId);
+    if (!dataFinal) return;
 
-  const form = document.getElementById("myForm");
-  form.innerHTML = ''; // Kosongkan form dulu
+    const form = document.getElementById("myForm");
+    form.innerHTML = ''; // Kosongkan form dulu
 
-  for (const key in dataFinal) {
-    // Bungkus tiap field dalam div
-    const formGroup = document.createElement("div");
-    formGroup.classList.add("form-group");
+    const hiddenInput = document.createElement("input");
+    hiddenInput.type = "hidden";
+    hiddenInput.name = "id";
+    hiddenInput.value = rowId;
+    form.appendChild(hiddenInput);
 
-    // Label
-    const label = document.createElement("label");
-    label.setAttribute("for", key);
-    label.textContent = key.replace(/_/g, ' ') + ":";
+    for (const key in dataFinal) {
+        // Bungkus tiap field dalam div
+        const formGroup = document.createElement("div");
+        formGroup.classList.add("form-group");
 
-    // Input
-    const input = document.createElement("input");
-    input.type = "text";
-    input.name = key;
-    input.id = key;
-    input.value = dataFinal[key];
+        // Label
+        const label = document.createElement("label");
+        label.setAttribute("for", key);
+        label.textContent = key.replace(/_/g, ' ') + ":";
 
-    // Masukkan ke dalam div
-    formGroup.appendChild(label);
-    formGroup.appendChild(input);
+        // Input
+        const input = document.createElement("input");
+        input.type = "text";
+        input.name = key;
+        input.id = key;
+        input.value = dataFinal[key];
 
-    // Tambahkan div ke form
-    form.appendChild(formGroup);
-  }
+        // Masukkan ke dalam div
+        formGroup.appendChild(label);
+        formGroup.appendChild(input);
 
-  // Tombol submit
-  const submitBtn = document.createElement("button");
-  submitBtn.type = "submit";
-  submitBtn.textContent = "Kirim Data";
-  submitBtn.style.marginTop = "10px";
+        // Tambahkan div ke form
+        form.appendChild(formGroup);
+    }
 
-  form.appendChild(submitBtn);
+    // Tombol submit
+    const submitBtn = document.createElement("button");
+    submitBtn.type = "button";
+    submitBtn.id = "submitBtnDapot"; // ⬅️ ini ID-nya
+    submitBtn.textContent = "Kirim Data";
+    submitBtn.style.marginTop = "10px";
+    submitBtn.onclick = () => kirimFormDapot('update');
+
+    form.appendChild(submitBtn);
+}
+
+function kirimFormDapot(action) {
+    const form = document.getElementById("myForm");
+    const formData = new FormData(form);
+    const db_name = db_dapot_selector();
+
+    formData.append("db_name", db_name);
+
+    fetch("backend/function.php?request=" + action, {
+        method: "POST",
+        body: formData
+    })
+        .then(response => response.json())
+        .then(result => {
+            console.log("Respon dari server:", result.status);
+            closePopup();
+            success_alert('Dapot');
+            create_table_head(result.db_updated);
+            create_table_body(result.db_updated);
+            generate_dapot_list();
+            
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("Gagal mengirim data.");
+        });
+}
+
+function db_dapot_selector() {
+    const allActiveMenus = document.querySelectorAll('.submenu_selected');
+    var nama_db;
+    allActiveMenus.forEach(menu => {
+        console.log("ID:", menu.id, "TEXT:", menu.textContent);
+        nama_db = menu.id
+    });
+    console.log('ini nama db =' + nama_db)
+    return nama_db;
+}
+
+function success_alert(action){
+Swal.fire({
+    toast: true,
+  position: "top-end",
+  icon: "success",
+  title: action + " Updated",
+  showConfirmButton: false,
+  timer: 1500
+});
 }
 
 

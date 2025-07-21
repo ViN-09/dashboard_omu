@@ -409,6 +409,26 @@ aside:not(:has(:checked))
   display: none;
 }
 
+  .swal2-popup.swal2-toast .swal2-icon,
+  .swal2-popup.swal2-toast .swal2-title {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+  }
+
+  .swal2-popup.swal2-toast {
+    display: flex !important;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .swal2-popup.swal2-toast .swal2-title {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
 
 
 @media (max-width: 450px) {
@@ -484,6 +504,8 @@ nav {
     box-shadow: 0 3px 5px #1233, 0 5px 17px #0003;
     height: 95vh;
 }
+
+
 
 .display_popup_box {
     max-width: 90%;
